@@ -151,3 +151,5 @@ function git-add-and-cmsg() {
 alias gacmsg="git-add-and-cmsg"
 
 alias gcob="git checkout -b"
+
+alias grv="git remote --verbose"

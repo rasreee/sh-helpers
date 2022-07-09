@@ -8,3 +8,4 @@ alias nuke-misc="nukeall .DS_Store"
 
 alias nuke-out="nuke-node && nuke-builds && nuke-tscache && nuke-misc"
 alias no="nuke-out"
+alias nko="nuke-out"

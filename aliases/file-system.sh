@@ -1,10 +1,13 @@
-function current-directory-name() {
-  dirname=$(basename "$PWD")
-  echo $dirname
+function current-dirname() {
+  basename "$PWD"
 }
-alias cdn="current-directory-name"
+alias cdn="current-dirname"
 
-function clonefolder() {
+function clone-dir() {
   rsync -a "$1/" "$2/"
 }
-alias clf="clonefolder"
+alias cld="clone-dir"
+
+function dir-size() {
+  du -sh $1
+}

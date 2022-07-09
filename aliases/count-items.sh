@@ -1,4 +1,16 @@
 function count-items() {
-  find ./* -maxdepth 0 | wc -l
+  local pathname="$1"
+
+  if [[ -z $pathname ]] then
+    echo "No pathname specified"
+  fi
+
+  local fullPath="./"
+  fullPath+="$pathname"
+  fullPath+="/*"
+
+  echo "FULL PATH: $fullPath"
+
+  find "$fullPath" -maxdepth 0
 }
 alias cit="count-items"
