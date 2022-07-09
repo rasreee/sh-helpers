@@ -1,7 +1,7 @@
 function nuke() {
   local target="$1"
   
-  find . \( -name \"$target\" \) -prune -exec rm -rf \"{}\" +
+  find ./* -name $target -prune -exec rm -rf '{}' + 
 }
 alias nk="nuke"
 
