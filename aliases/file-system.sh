@@ -8,6 +8,10 @@ function clone-dir() {
 }
 alias cld="clone-dir"
 
-function dir-size() {
+function dirsize() {
   du -sh $1
+}
+
+function sortby-dirsize() {
+  du -sh -- */ | sort -rh
 }
