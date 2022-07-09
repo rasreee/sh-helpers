@@ -11,6 +11,7 @@ alias cld="clone-dir"
 function dirsize() {
   du -sh $1
 }
+alias dsz="dirsize"
 
 function sortby-dirsize() {
   du -sh -- */ | sort -rh
