@@ -1,0 +1,1 @@
+alias which-nvm="command -v nvm"
