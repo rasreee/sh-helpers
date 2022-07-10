@@ -16,3 +16,8 @@ alias dz="dirsize"
 function sortby-dirsize() {
   du -sh -- */ | sort -rh
 }
+
+function filesize() {
+  du -h $1
+}
+alias fz="filesize"

@@ -15,7 +15,7 @@ function getEnv() {
 function assertEnvVar() {           
   local envVar=
   envVar=$(declare -p "$1")
-  if !  [[ -v $1 && $envVar =~ ^declare\ -x ]]; then
+  if [[ -v $1 && $envVar =~ ^declare\ -x ]]; then
     echo "Error: Define $1 environment variable"
     return 0
   else
