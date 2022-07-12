@@ -1,6 +1,6 @@
-alias nuke-modules="nukeall node_modules tmp"
+alias nuke-modules="nukeall tmp"
 alias nuke-lock="nukeall package-lock.json yarn.lock"
-alias nuke-node="nuke-lock && nuke-modules"
+alias nuke-node="nuke-modules"
 
 alias nuke-tscache="nuke tsconfig.tsbuildinfo"
 alias nuke-builds="nukeall dist build .next"

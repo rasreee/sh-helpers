@@ -123,10 +123,10 @@ function maybe-create-repo() {
 
 alias grmcached="git rm -r --cached . && git add --all && git status"
 
-alias git-push-origin-main="git push -u origin main"
+alias git-push-origin-main="git push origin main"
 alias gpom="git-push-origin-main"
 
-alias git-push-origin-main-force="git-push-origin-main -f"
+alias git-push-origin-main-force="git push origin main --force"
 alias gpomf="git-push-origin-main-force"
 
 alias git-current-branch="git rev-parse --abbrev-ref HEAD"
@@ -153,3 +153,9 @@ alias gacmsg="git-add-and-cmsg"
 alias gcob="git checkout -b"
 
 alias grv="git remote --verbose"
+
+
+function git-remote-add-push-url() {
+  git remote set-url --add --push origin "$1"
+}
+alias grapu="git-remote-add-push-url"
