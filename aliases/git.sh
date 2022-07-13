@@ -64,17 +64,9 @@ function format-git-remote-url() {
 }
 
 
-function init-license() {
-  cp ~/templates/LICENSE ./LICENSE
-}
-
 function git-reinit() {
   echo "👋 Reinitializing git repository"
-
   rm -rf .git
-
-  touch .gitignore
-  init-license
 
   git init
   git add --all
@@ -96,7 +88,7 @@ function git-init-and-push() {
   echo "👉 Pushing..."
   git push -u origin main -f
 
-  echo "✅ Done!"
+  echo "✅ Done"
 }
 
 function get-or-add-remote() {
