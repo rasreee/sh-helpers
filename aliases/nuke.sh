@@ -1,11 +1,13 @@
-alias nuke-modules="nukeall tmp"
-alias nuke-lock="nukeall package-lock.json yarn.lock"
-alias nuke-node="nuke-modules"
+alias nukemodules="nukeall tmp"
+alias nukelock="nukeall package-lock.json yarn.lock"
+alias nukenode="nukemodules"
 
-alias nuke-tscache="nuke tsconfig.tsbuildinfo"
-alias nuke-builds="nukeall dist build .next"
-alias nuke-misc="nukeall .DS_Store"
+alias nuketscache="nuke tsconfig.tsbuildinfo"
+alias nukebuilds="nukeall dist build .next"
+alias nukedsstore="nukeall .DS_Store"
 
-alias nuke-out="nuke-node && nuke-builds && nuke-tscache && nuke-misc"
-alias no="nuke-out"
-alias nko="nuke-out"
+alias nukegit="nukeall .git"
+
+alias nukeout="nukenode && nukebuilds && nuketscache && nukemisc"
+alias no="nukeout"
+alias nko="nukeout"
