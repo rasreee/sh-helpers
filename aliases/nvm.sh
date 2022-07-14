@@ -1,2 +1,5 @@
+#!/bin/sh
+
 alias which-nvm="command -v nvm"
-alias nvm-use-current="nvm use $(cat .nvmrc)"
+
+alias nvm-use-current="nvm use \$(cat .nvmrc)"
