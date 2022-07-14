@@ -1,3 +1,5 @@
+#!/bin/sh
+
 alias find-tscache="findall tsconfig.tsbuildinfo"
 
 alias find-modules="findall node_modules"

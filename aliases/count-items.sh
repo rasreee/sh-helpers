@@ -1,7 +1,9 @@
-function count-items() {
+#!/bin/sh
+
+count-items() {
   local pathname="$1"
 
-  if [[ -z $pathname ]] then
+  if [[ -z $pathname ]]; then
     echo "No pathname specified"
   fi
 

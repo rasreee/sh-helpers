@@ -1,3 +1,5 @@
+#!/bin/sh
+
 alias ab="anchor build"
 alias ad="anchor deploy"
 alias au="anchor upgrade"

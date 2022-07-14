@@ -9,12 +9,12 @@ alias ydl="yarn deploy"
 alias yb="yarn build"
 alias yrb="yarn rebuild"
 
-function yarn-add-with-types() {
+yarn-add-with-types() {
   yarn add $1 && yarn add --dev "@types/$1"
 }
 alias yawt=yarn-add-with-types
 
-function yarn-remove-with-types() {
+yarn-remove-with-types() {
   yarn remove $1 "@types/$1"
 }
 alias yrwt=yarn-remove-with-types

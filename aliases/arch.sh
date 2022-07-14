@@ -1,4 +1,6 @@
-function switch-to-arch-x86_64() {
+#!/bin/sh
+
+switch-to-arch-x86_64() {
   arch -x86_64 zsh
 }
 

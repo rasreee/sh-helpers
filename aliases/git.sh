@@ -1,7 +1,7 @@
 alias gstsh="git stash"
 alias gi="git init"
 
-function git-remote-url() {
+git-remote-url() {
   result=$(git remote get-url origin)
 
   if [ "$?" -ne "0" ]; then
@@ -12,14 +12,14 @@ function git-remote-url() {
 }
 alias gurl="git-remote-url"
 
-function git-remote-show-origin() {
+git-remote-show-origin() {
   git remote show origin
 }
 alias grms="git-remote-show-origin"
 
-function git-flush() {
+git-flush() {
   branch=${1:-dev}
-  echo "Flushing changes from $branch onto main";
+  echo "Flushing changes from $branch onto main"
 
   git checkout $branch
   git checkout main
@@ -30,16 +30,16 @@ function git-flush() {
 alias gflush="git-flush"
 alias gfl="git-flush"
 
-function git-squash() {
-	numCommits=$1
-  echo "Squashing $numCommits commits from current HEAD";
+git-squash() {
+  numCommits=$1
+  echo "Squashing $numCommits commits from current HEAD"
 
-	git rebase -i HEAD~$numCommits
+  git rebase -i HEAD~$numCommits
 }
 alias gsqsh="git-squash"
 alias gsq="git-squash"
 
-function git-clear-history() {
+git-clear-history() {
   remoteUrl=$(git-remote-url)
 
   echo "Clearing Git history"
@@ -54,17 +54,15 @@ function git-clear-history() {
 }
 alias gch="git-clear-history"
 
-
-function get-directory-name() {
+get-directory-name() {
   basename "$PWD"
 }
 
-function format-git-remote-url() {
+format-git-remote-url() {
   echo "https://github.com/$GITHUB_USERNAME/$(get-directory-name).git"
 }
 
-
-function git-reinit() {
+git-reinit() {
   echo "👋 Reinitializing git repository"
   rm -rf .git
 
@@ -74,7 +72,7 @@ function git-reinit() {
   git branch -M main
 }
 
-function git-init-and-push() {
+git-init-and-push() {
   echo "👋 Initializing and pushing Git repo"
   git-reinit
 
@@ -91,11 +89,11 @@ function git-init-and-push() {
   echo "✅ Done"
 }
 
-function get-or-add-remote() {
+get-or-add-remote() {
   rm -rf /tmp/git-remote-url-error.txt
   output="$(git remote get-url origin 2>/tmp/git-remote-url-error.txt)"
   if [[ -s /tmp/git-remote-url-error.txt ]]; then
-    echo 'git remote get-url failed. error:' >&2 
+    echo 'git remote get-url failed. error:' >&2
 
     echo 'Resetting remote by removing it and adding it again'
     remoteUrl=$(format-git-remote-url)
@@ -107,7 +105,7 @@ function get-or-add-remote() {
   return "$remoteUrl"
 }
 
-function maybe-create-repo() {
+maybe-create-repo() {
   remoteUrl=$(get-or-add-remote)
   echo "👉 Creating remote repo..."
   hub create -p
@@ -124,19 +122,19 @@ alias gpomf="git-push-origin-main-force"
 alias git-current-branch="git rev-parse --abbrev-ref HEAD"
 alias gcb="git-current-branch"
 
-function git-push-branch() {
+git-push-branch() {
   git push -u origin "$(git-current-branch)"
 }
 alias gpb="git-push-branch"
 
-function git-remote-remove() {
+git-remote-remove() {
   git remote remove "$1"
 }
 alias grr="git-remote-remove"
 alias grro="git remote remove origin"
 alias grao="git remote add origin"
 
-function git-add-and-cmsg() {
+git-add-and-cmsg() {
   git add . && git commit -m "$1"
 }
 
@@ -146,8 +144,7 @@ alias gcob="git checkout -b"
 
 alias grv="git remote --verbose"
 
-
-function git-remote-add-push-url() {
+git-remote-add-push-url() {
   git remote set-url --add --push origin "$1"
 }
 alias grapu="git-remote-add-push-url"

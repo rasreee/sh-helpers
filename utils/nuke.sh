@@ -1,15 +1,15 @@
-function nuke() {
+nuke() {
   local target="$1"
-  
-  find . -name $target -prune -exec rm -rf '{}' +
+
+  find . -name "$target" -prune -exec rm -rf '{}' +
 }
 alias nk="nuke"
 
-function nukeall() {
+nukeall() {
   local finalCommand="find . \("
   local prefix=""
 
-  for var in $@; do
+  for var in "$@"; do
     echo "Deleting $var..."
     finalCommand+="$prefix -name \"$var\""
     index+=1
@@ -18,6 +18,7 @@ function nukeall() {
 
   finalCommand+=" \) -prune -exec rm -rf \"{}\" +"
 
-  eval $finalCommand
+  eval "$finalCommand"
 }
+
 alias nka="nukeall"

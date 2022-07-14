@@ -1,9 +1,9 @@
-function getEnv() {
+getEnv() {
   local varName="$1"
   local fallback="$2"
-  
-  if [[ -z "$varName" ]] then  
-    if [[ -z "$fallback" ]] then
+
+  if [[ -z "$varName" ]]; then
+    if [[ -z "$fallback" ]]; then
       echo "Env variable $varName is empty, but getEnv-var was called w/o a fallback as its 2nd parameter"
     fi
     echo "$fallback"
@@ -12,7 +12,7 @@ function getEnv() {
   fi
 }
 
-function assertEnvVar() {           
+assertEnvVar() {
   local envVar=
   envVar=$(declare -p "$1")
   if [[ -v $1 && $envVar =~ ^declare\ -x ]]; then
