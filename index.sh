@@ -1,4 +1,12 @@
-source "$SH_HELPERS_DIR/pre/sourceall.sh"
-sourceall utils $SH_HELPERS_DIR
-sourceall aliases $SH_HELPERS_DIR
-sourceall post $SH_HELPERS_DIR
+function run-many() {
+  local path="$1"
+  local rootDir="$SH_HELPERS_DIR/$path"
+
+  for file in $rootDir/*.sh(D); do
+    # echo "running script $file"
+    source $file
+  done
+}
+
+run-many utils
+run-many aliases
